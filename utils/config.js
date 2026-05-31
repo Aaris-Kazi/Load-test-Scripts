@@ -1,5 +1,5 @@
 const config = {
-    BASE_URL: 'https://clauseguard.siddx.in',
+    BASE_URL: 'https://example.com/api',
     HEADERS: {"Content-Type": "application/json"},
     DEBUG: false,
     TIMEOUT: 5000,
