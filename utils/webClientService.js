@@ -41,7 +41,6 @@ const webClientGetService = (endpoint, token = null) => {
 
     if (config.DEBUG == true) {
         console.log(`Sending request to ${config.BASE_URL}${endpoint}`);
-        console.log(`Payload: ${JSON.stringify(payload)}`);
     }
 
     const response = http.get(`${config.BASE_URL}${endpoint}`, { headers });
