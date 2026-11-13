@@ -38,13 +38,9 @@ const webClientGetService = (endpoint, token = null) => {
     if (token) {
         headers['Authorization'] = `Bearer ${token}`;
     }
-
     
     const response = http.get(`${config.BASE_URL}${endpoint}`, { headers });
     
-    console.log(`Sending request to ${config.BASE_URL}${endpoint}`);
-    console.log(response.status)
-    console.log(response.body)
     if (config.DEBUG === true) {
         console.log(`Sending request to ${config.BASE_URL}${endpoint}`);
         console.log(response.status)

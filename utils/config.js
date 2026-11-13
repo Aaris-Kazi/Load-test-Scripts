@@ -1,6 +1,6 @@
 const config = {
     // BASE_URL: 'https://example.com/api',
-    BASE_URL: 'https://network:8090/',
+    BASE_URL: 'http://192.168.0.107:8090/',
     HEADERS: {"Content-Type": "application/json"},
     DEBUG: true,
     TIMEOUT: 5000,
