@@ -42,7 +42,7 @@ const webClientGetService = (endpoint, token = null) => {
     
     const response = http.get(`${config.BASE_URL}${endpoint}`, { headers });
     
-    if (config.DEBUG == true) {
+    if (config.DEBUG === true) {
         console.log(`Sending request to ${config.BASE_URL}${endpoint}`);
         console.log(response.status)
         console.log(response.body)
