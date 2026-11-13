@@ -12,14 +12,15 @@ const webClientService = (endpoint, payloadobj = null, token = null) => {
         headers['Authorization'] = `Bearer ${token}`;
     }
 
-    if (config.DEBUG == true) {
+    
+    const response = http.post(`${config.BASE_URL}${endpoint}`, JSON.stringify(payload), { headers });
+    
+    if (config.DEBUG === true) {
         console.log(`Sending request to ${config.BASE_URL}${endpoint}`);
         console.log(`Payload: ${JSON.stringify(payload)}`);
     }
 
-    const response = http.post(`${config.BASE_URL}${endpoint}`, JSON.stringify(payload), { headers });
-
-    if (response.status != config.OK_STATUS) {
+    if (response.status !== config.OK_STATUS) {
         console.log(`Response: ${response.body}`);
         console.log(`Response: ${response.status}`);
     }
