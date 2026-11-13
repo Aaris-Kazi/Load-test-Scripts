@@ -4,6 +4,7 @@ const config = {
     HEADERS: {"Content-Type": "application/json"},
     DEBUG: false,
     TIMEOUT: 5000,
+    API_V1: 'api/v1/',
     RETRY_ATTEMPTS: 3,
     OK_STATUS: 200,
     RATE: __ENV.RATE || 10
