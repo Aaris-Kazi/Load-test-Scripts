@@ -39,13 +39,15 @@ const webClientGetService = (endpoint, token = null) => {
         headers['Authorization'] = `Bearer ${token}`;
     }
 
+    
+    const response = http.get(`${config.BASE_URL}${endpoint}`, { headers });
+    
     if (config.DEBUG == true) {
         console.log(`Sending request to ${config.BASE_URL}${endpoint}`);
+        console.log(response.status)
+        console.log(response.body)
     }
-
-    const response = http.get(`${config.BASE_URL}${endpoint}`, { headers });
-
-    if (response.status != config.OK_STATUS) {
+    if (response.status !== config.OK_STATUS) {
         console.log(`Response: ${response.body}`);
         console.log(`Response: ${response.status}`);
     }
