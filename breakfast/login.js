@@ -10,7 +10,7 @@ export default function () {
     const endpoint = `${API_V1}login/`;
     const payload = { 
         'email': 'aariskazi@gmail.com', 
-        'password': 'password' 
+        'password': '12345' 
     };
 
     webClientService(endpoint, payload);
