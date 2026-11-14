@@ -18,15 +18,17 @@ const webClientService = (endpoint, payloadobj = null, token = null) => {
     if (config.DEBUG === true) {
         console.log(`Sending request to ${config.BASE_URL}${endpoint}`);
         console.log(`Payload: ${JSON.stringify(payload)}`);
+        console.log(`Payload: ${response.body}`);
+        console.log(`Payload: ${response.status}`);
     }
 
-    if (response.status !== config.OK_STATUS) {
+    if (response.status !== 201) {
         console.log(`Response: ${response.body}`);
         console.log(`Response: ${response.status}`);
     }
     
     check(response, {
-        'is status 200': (r) => r.status === config.OK_STATUS
+        'is status 201': (r) => r.status === 201
     });
     return response;
 }
